@@ -114,12 +114,20 @@ new_hash = { response: {
 
 articles = new_hash[:response][:results]
 
-puts articles
+# puts articles
 
 def read_article(values)
   random = values.sample
   random[:views] += 1
 end
 
+def display_views(values)
+  values.each do |value|
+    puts value[:webTitle]
+    puts value[:views]
+  end
+end
+
 puts read_article(articles)
-puts articles
+display_views(articles)
+# puts articles
