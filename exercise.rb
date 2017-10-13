@@ -1,4 +1,4 @@
-{ response: {
+new_hash = { response: {
   status: "ok",
   userTier: "developer",
   total: 9772,
@@ -110,3 +110,11 @@
     }
   ]}
 }
+
+articles = new_hash[:response][:results]
+
+puts articles
+
+def read_article(articles)
+
+end
