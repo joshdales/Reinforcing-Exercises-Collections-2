@@ -56,7 +56,8 @@ new_hash = { response: {
       webTitle: "10 of the best hotels in Toronto",
       webUrl: "https://www.theguardian.com/discover-cool-canada/2016/sep/16/10-of-the-best-hotels-in-toronto",
       apiUrl: "https://content.guardianapis.com/discover-cool-canada/2016/sep/16/10-of-the-best-hotels-in-toronto",
-      isHosted: false },
+      isHosted: false,
+      views: 0},
     { id: "discover-cool-canada/2016/sep/16/10-toronto-restaurants-to-suit-every-budget",
       type: "article",
       sectionId: "discover-cool-canada",
@@ -115,6 +116,10 @@ articles = new_hash[:response][:results]
 
 puts articles
 
-def read_article(articles)
-
+def read_article(values)
+  random = values.sample
+  random[:views] += 1
 end
+
+puts read_article(articles)
+puts articles
